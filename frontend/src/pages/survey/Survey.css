@@ -1,0 +1,90 @@
+.survey-page {
+  width: min(1120px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 110px) 0 96px;
+  color: var(--color-ink);
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px) 72px;
+  border-radius: 28px;
+  background: var(--color-bg);
+  box-shadow: var(--shadow-soft);
+}
+
+.survey-background {
+  min-height: 100vh;
+  padding: 48px 24px;
+  background: url("../../assets/background-survey.png") center / cover fixed;
+}
+
+.survey-page > h1 {
+  max-width: 760px;
+  margin: 0 auto;
+  font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.08;
+  text-align: center;
+}
+
+.survey-page > p {
+  margin: 18px auto 0;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.role-selection {
+  max-width: 680px;
+  margin: 38px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.role-selection .option {
+  font-size: 18px;
+  min-height: 76px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.56);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.role-selection .option:hover {
+  transform: translateY(-2px);
+  border-color: rgba(30, 59, 95, 0.38);
+}
+
+.role-selection .option.selected {
+  border-color: var(--color-ink);
+  background: var(--color-accent);
+}
+
+.role-selection input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--color-ink);
+}
+
+@media (max-width: 640px) {
+  .survey-page {
+    width: min(100% - 32px, 1120px);
+    padding-top: 48px;
+  }
+
+  .role-selection {
+    grid-template-columns: 1fr;
+  }
+}

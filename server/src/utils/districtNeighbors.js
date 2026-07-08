@@ -1,0 +1,46 @@
+const districtNeighbors = {
+  Tbilisi: {
+    Vake: ["Saburtalo", "Vera", "Mtatsminda"],
+    Saburtalo: ["Vake", "Dighomi", "Didube"],
+    Mtatsminda: ["Vake", "Vera", "Chughureti"],
+    Dighomi: ["Saburtalo", "Didube", "Gldani"],
+    Nadzaladevi: ["Didube", "Chughureti", "Gldani"],
+    Vera: ["Vake", "Mtatsminda", "Chughureti"],
+    Didube: ["Saburtalo", "Dighomi", "Nadzaladevi"],
+    Gldani: ["Dighomi", "Nadzaladevi"],
+    Isani: ["Samgori", "Avlabari", "Ortachala"],
+    Samgori: ["Isani", "Varketili", "Lilo"],
+    Varketili: ["Samgori", "Lilo"],
+    Ortachala: ["Isani", "Krtsanisi", "Avlabari"],
+    Krtsanisi: ["Ortachala", "Avlabari", "Mtatsminda"],
+    Avlabari: ["Chughureti", "Isani", "Ortachala", "Krtsanisi"],
+    Chughureti: ["Vera", "Mtatsminda", "Avlabari", "Nadzaladevi"],
+    Lilo: ["Samgori", "Varketili"],
+  },
+  Batumi: {
+    "Old Batumi": ["New Boulevard", "Khimshiashvili Area"],
+    "New Boulevard": ["Old Batumi", "Khimshiashvili Area", "Airport Area"],
+    "Khimshiashvili Area": ["Old Batumi", "New Boulevard", "Airport Area"],
+    "Airport Area": ["New Boulevard", "Khimshiashvili Area", "Gonio"],
+    Makhinjauri: ["Green Cape (Mtsvane Kontskhi)"],
+    Gonio: ["Airport Area", "Kvariati"],
+    Kvariati: ["Gonio"],
+    "Green Cape (Mtsvane Kontskhi)": ["Makhinjauri"],
+  },
+  Kutaisi: {
+    "City Centre": ["Sapichkhia", "Youth Park Area"],
+    Nikea: ["Avangardi", "Youth Park Area"],
+    Avangardi: ["Nikea", "Youth Park Area"],
+    Sapichkhia: ["City Centre", "Asakiani"],
+    Asakiani: ["Sapichkhia", "Youth Park Area"],
+    "Youth Park Area": ["City Centre", "Nikea", "Avangardi", "Asakiani"],
+  },
+  Rustavi: {
+    "Old Rustavi": ["New Rustavi", "Friendship Avenue Area"],
+    "New Rustavi": ["Old Rustavi", "19th Microdistrict"],
+    "19th Microdistrict": ["New Rustavi", "Friendship Avenue Area"],
+    "Friendship Avenue Area": ["Old Rustavi", "19th Microdistrict"],
+  },
+};
+
+module.exports = districtNeighbors;

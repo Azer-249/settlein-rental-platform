@@ -1,0 +1,7 @@
+.app-footer {
+  margin-top: auto;
+  padding: 26px 32px;
+  border-top: 1px solid var(--color-line);
+  text-align: center;
+  color: var(--color-muted);
+}

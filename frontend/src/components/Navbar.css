@@ -1,0 +1,276 @@
+.app-navbar {
+  position: relative;
+  z-index: 40;
+  width: min(1500px, calc(100% - 64px));
+  min-height: 78px;
+  margin: 14px auto 0;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  border: 1px solid rgba(23, 56, 95, 0.06);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-floating);
+  backdrop-filter: blur(16px);
+}
+
+.app-navbar-left {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 5vw, 68px);
+}
+
+.app-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+  color: var(--color-ink-strong);
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.button-icon,
+.chevron-icon,
+.account-menu-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.button-icon {
+  filter: brightness(0) saturate(100%) invert(48%) sepia(51%) saturate(584%)
+    hue-rotate(126deg) brightness(94%) contrast(91%);
+}
+
+.account-menu-icon,
+.chevron-icon {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(55%) saturate(921%)
+    hue-rotate(176deg) brightness(91%) contrast(90%);
+}
+
+.navbar-primary-links {
+  min-height: 78px;
+  display: flex;
+  align-items: stretch;
+  gap: clamp(24px, 4vw, 58px);
+}
+
+.app-navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.navbar-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 100%;
+  color: var(--color-muted-strong);
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.navbar-primary-links .navbar-link {
+  padding: 0 2px;
+}
+
+.navbar-primary-links .navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  border-radius: 999px 999px 0 0;
+  background: transparent;
+  transition: background 160ms ease;
+}
+
+.navbar-link.active,
+.navbar-link:hover {
+  color: var(--color-accent-strong);
+}
+
+.navbar-primary-links .navbar-link.active::after {
+  background: var(--color-accent);
+}
+
+.navbar-account-dropdown {
+  position: relative;
+}
+
+.navbar-account-dropdown summary {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  cursor: pointer;
+  font-weight: 750;
+  color: var(--color-muted-strong);
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.navbar-account-dropdown summary:hover,
+.navbar-account-dropdown[open] summary {
+  color: var(--color-ink-strong);
+}
+
+.navbar-account-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.chevron-icon {
+  transition: transform 160ms ease;
+}
+
+.navbar-account-dropdown[open] .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.navbar-account-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  z-index: 50;
+  min-width: 178px;
+  padding: 10px;
+  border: 1px solid rgba(23, 56, 95, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 40px rgba(23, 56, 95, 0.14);
+  display: grid;
+  gap: 8px;
+}
+
+.navbar-account-menu a,
+.navbar-account-menu button {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--color-ink-strong);
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-account-menu a:hover,
+.navbar-account-menu button:hover {
+  background: rgba(47, 169, 160, 0.1);
+  color: var(--color-accent-strong);
+}
+
+.navbar-switch-button {
+  min-height: 52px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid var(--settlein-navy);
+  border-radius: 999px;
+  background: var(--settlein-mint);
+  color: var(--settlein-navy);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.navbar-switch-button:hover {
+  transform: translateY(-1px);
+  background: var(--settlein-mint);
+  box-shadow: 0 12px 24px rgba(30, 59, 95, 0.12);
+}
+
+@media (max-width: 720px) {
+  .app-navbar {
+    width: min(100% - 24px, 1500px);
+    min-height: 0;
+    padding: 16px;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .app-navbar-left,
+  .app-navbar-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .app-navbar-left {
+    gap: 18px;
+  }
+
+  .navbar-primary-links {
+    width: 100%;
+    min-height: 50px;
+    gap: 24px;
+    order: 3;
+  }
+
+  .app-navbar-actions {
+    justify-content: space-between;
+  }
+
+  .navbar-switch-button {
+    flex: 1 1 190px;
+  }
+}
+
+@media (max-width: 460px) {
+  .app-brand {
+    font-size: 24px;
+  }
+
+  .nav-logo-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar-primary-links {
+    overflow-x: auto;
+  }
+
+  .app-navbar-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .navbar-account-dropdown summary,
+  .navbar-switch-button {
+    width: 100%;
+  }
+
+  .navbar-account-dropdown summary {
+    justify-content: space-between;
+  }
+}
